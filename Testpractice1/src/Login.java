@@ -177,7 +177,7 @@ public class Login {
 		frame.getContentPane().add(comboBoxlist);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\JEFFERY\\Desktop\\images\\background.jpg"));
+		label.setIcon(new ImageIcon("C:\\Users\\JEFFERY\\Documents\\Desktop\\images\\background.jpg"));
 		label.setBounds(0, 0, 529, 305);
 		frame.getContentPane().add(label);
 	}
