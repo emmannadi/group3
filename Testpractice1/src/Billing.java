@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JComboBox;
+import javax.swing.JTextArea;
 
 public class Billing extends JFrame {
 
@@ -40,7 +41,7 @@ public class Billing extends JFrame {
 	String operations;
 	
 
-	double iTax = 5.50;
+	double iTax;
 	double[] i = new double[5];
 	
 	
@@ -304,6 +305,10 @@ public class Billing extends JFrame {
 		tabbedPane.addTab("Receipt", null, panel_1, null);
 		panel_1.setLayout(null);
 		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(10, 11, 261, 329);
+		panel_1.add(textArea);
+		
 		JCheckBox checkBox = new JCheckBox("Asprin");
 		checkBox.addMouseListener(new MouseAdapter() {
 			@Override
@@ -557,6 +562,15 @@ public class Billing extends JFrame {
 		contentPane.add(btnClear);
 		
 		JButton btnReceipt = new JButton("Receipt");
+		btnReceipt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				double Qty1 = Double.parseDouble(textField.getText());
+				double Qty2 = Double.parseDouble(textField_1.getText());
+				double Qty3 = Double.parseDouble(textField_2.getText());
+				
+				textArea.append("NHS MEDICAL:\n\n" + "Asprin:\t\t" + Qty1 + "\nBP Test:\t\t" + Qty2);
+			}
+		});
 		btnReceipt.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
 		btnReceipt.setBounds(336, 317, 90, 30);
 		contentPane.add(btnReceipt);
@@ -564,9 +578,9 @@ public class Billing extends JFrame {
 		JButton btnCalculate = new JButton("Calculate");
 		btnCalculate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				double subTotals = Double.parseDouble(textField_9.getText());
-				double cTax = Double.parseDouble(textField_10.getText());
-				double FTotal = (subTotals + cTax);
+				//double subTotals = Double.parseDouble(textField_9.getText());
+				//double iTax = Double.parseDouble(textField_10.getText());
+				double FTotal = (i[0] + iTax);
 				
 				String iTotal = String.format("RM %.2f", FTotal);
 				textField_11.setText(iTotal);	
@@ -588,7 +602,7 @@ public class Billing extends JFrame {
 				//	textField_10.setText(null);
 				//}
 				
-				Double iTax;
+				//Double iTax;
 				iTax =i[0] + i[1] + i[2];
 				iTax = iTax/100;
 				String cTax = String.format("RM %.2f", iTax);
