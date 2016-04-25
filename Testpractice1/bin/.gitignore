@@ -6,6 +6,7 @@
 /AdminHome$6.class
 /AdminHome$7.class
 /AdminHome.class
+/AdminHomeTest.class
 /Billing$1.class
 /Billing$10.class
 /Billing$11.class
@@ -47,6 +48,7 @@
 /Login$2.class
 /Login$3.class
 /Login.class
+/LoginTest.class
 /Main$1.class
 /Main$2.class
 /Main$3.class
@@ -62,4 +64,3 @@
 /ManagePatient$5.class
 /ManagePatient.class
 /MysqlConnection.class
-/Billing$31.class

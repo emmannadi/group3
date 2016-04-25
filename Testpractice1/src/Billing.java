@@ -301,13 +301,9 @@ public class Billing extends JFrame {
 		buttonequal.setBounds(67, 265, 168, 45);
 		panel.add(buttonequal);
 		
-		JPanel panel_1 = new JPanel();
-		tabbedPane.addTab("Receipt", null, panel_1, null);
-		panel_1.setLayout(null);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 11, 261, 329);
-		panel_1.add(textArea);
+		
+	
 		
 		JCheckBox checkBox = new JCheckBox("Asprin");
 		checkBox.addMouseListener(new MouseAdapter() {
@@ -561,19 +557,6 @@ public class Billing extends JFrame {
 		btnClear.setBounds(336, 278, 90, 30);
 		contentPane.add(btnClear);
 		
-		JButton btnReceipt = new JButton("Receipt");
-		btnReceipt.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				double Qty1 = Double.parseDouble(textField.getText());
-				double Qty2 = Double.parseDouble(textField_1.getText());
-				double Qty3 = Double.parseDouble(textField_2.getText());
-				
-				textArea.append("NHS MEDICAL:\n\n" + "Asprin:\t\t" + Qty1 + "\nBP Test:\t\t" + Qty2);
-			}
-		});
-		btnReceipt.setFont(new Font("Comic Sans MS", Font.PLAIN, 13));
-		btnReceipt.setBounds(336, 317, 90, 30);
-		contentPane.add(btnReceipt);
 		
 		JButton btnCalculate = new JButton("Calculate");
 		btnCalculate.addActionListener(new ActionListener() {
